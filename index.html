@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Corona Virus Statistics</title>
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <a href="#" class="logo">LOGO</a>
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span class="hamburger"></span>
+                </label>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Question & Answers</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li class="mobile-only"><button class="get-start">Get
+                            Start</button></li>
+                </ul>
+                <button class="get-start desktop-only">Get Start</button>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1><span class="highlight">Corona</span> virus statistics</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.</p>
+                <div class="hero-buttons">
+                    <button class="btn primary">Our Service</button>
+                    <button class="btn secondary">Support</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img
+                        src="./doctor.png"
+                        alt="Doctor">
+                </div>
+            </div>
+        </section>
+
+        <section class="statistics">
+            <h2>STATISTICS</h2>
+            <div class="filters">
+                <div class="country-select">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg"
+                        alt="Canada" width="24">
+                    <span>Canada</span>
+                </div>
+                <div class="date-select">
+                    <i class="far fa-calendar"></i>
+                    <span>Date</span>
+                </div>
+                <button class="filter-btn">Filter</button>
+            </div>
+
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <h3>14</h3>
+                    <p>Rank</p>
+                </div>
+                <div class="stat-card">
+                    <h3>12,456</h3>
+                    <p>Total Cases</p>
+                </div>
+                <div class="stat-card">
+                    <h3>936</h3>
+                    <p>Death</p>
+                </div>
+                <div class="stat-card">
+                    <h3>12,456</h3>
+                    <p>Recovered</p>
+                </div>
+                <div class="stat-card">
+                    <h3>12,456</h3>
+                    <p>Recovered</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="chart">
+            <h2>CHART</h2>
+            <div class="charts-container">
+                <div class="chart-box">
+                    <h3>TOTAL CASES</h3>
+                    <canvas id="totalCasesChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h3>TOTAL CASES</h3>
+                    <canvas id="deathsChart"></canvas>
+                </div>
+                <div class="worldwide-stats">
+                    <h3>WORLDWIDE STATISTICS</h3>
+                    <div class="stat-item">
+                        <div class="stat-detail">
+                            <h4>2,464</h4>
+                            <p>Total Cases</p>
+                        </div>
+                        <div class="stat-detail">
+                            <h4>981</h4>
+                            <p>Recovered</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-detail">
+                            <h4>1,643</h4>
+                            <p>Infected Now</p>
+                        </div>
+                        <div class="stat-detail">
+                            <h4>542</h4>
+                            <p>Death</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="orders">
+            <div class="orders-header">
+                <h2>Orders Country</h2>
+                <button class="filter-btn">Filter</button>
+            </div>
+            <div class="orders-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Total Cases</th>
+                            <th>Death</th>
+                            <th>Recovered</th>
+                            <th>RANK</th>
+                            <th>TRACKING</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="country-cell">
+                                    <img
+                                        src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
+                                        alt="USA" width="24">
+                                    USA
+                                </div>
+                            </td>
+                            <td>10,527,456</td>
+                            <td>2,767,897</td>
+                            <td>8,567,754</td>
+                            <td>1</td>
+                            <td>IN335942</td>
+                            <td><i class="fas fa-ellipsis-v"></i></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="country-cell">
+                                    <img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg"
+                                        alt="CHINA" width="24">
+                                    CHINA
+                                </div>
+                            </td>
+                            <td>8,627,456</td>
+                            <td>2,232,876</td>
+                            <td>6,231,875</td>
+                            <td>2</td>
+                            <td>IN335942</td>
+                            <td><i class="fas fa-ellipsis-v"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="see-more">See More</button>
+        </section>
+
+        <section class="blog">
+            <h2>BLOG</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img
+                            src="https://img.freepik.com/free-photo/medical-banner-with-doctor-wearing-goggles_23-2149611193.jpg"
+                            alt="Blog 1">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i
+                                    class="far fa-calendar"></i>
+                                2020/04/25</span>
+                            <span class="blog-category">Covid-19</span>
+                        </div>
+                        <h3 class="blog-title">10 Dangerous diseases in the
+                            world</h3>
+                        <p class="blog-description">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <img
+                                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                                    alt="Author">
+                                <div class="author-info">
+                                    <span class="author-name">Dr. John
+                                        Doe</span>
+                                    <span class="author-role">Doctor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img
+                            src="https://img.freepik.com/free-photo/medical-banner-with-doctor-wearing-goggles_23-2149611193.jpg"
+                            alt="Blog 2">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i
+                                    class="far fa-calendar"></i>
+                                2020/04/25</span>
+                            <span class="blog-category">Health</span>
+                        </div>
+                        <h3 class="blog-title">How to protect yourself from
+                            Covid-19</h3>
+                        <p class="blog-description">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <img
+                                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                                    alt="Author">
+                                <div class="author-info">
+                                    <span class="author-name">Dr. Sarah
+                                        Smith</span>
+                                    <span class="author-role">Doctor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img
+                            src="https://img.freepik.com/free-photo/medical-banner-with-doctor-wearing-goggles_23-2149611193.jpg"
+                            alt="Blog 3">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i
+                                    class="far fa-calendar"></i>
+                                2020/04/25</span>
+                            <span class="blog-category">Medical</span>
+                        </div>
+                        <h3 class="blog-title">Latest updates on coronavirus
+                            vaccine</h3>
+                        <p class="blog-description">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <img
+                                    src="https://randomuser.me/api/portraits/men/67.jpg"
+                                    alt="Author">
+                                <div class="author-info">
+                                    <span class="author-name">Dr. Mike
+                                        Johnson</span>
+                                    <span class="author-role">Doctor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-menu">
+                    <h3>MENU</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Question & Answers</a></li>
+                        <li><a href="#">About us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-about">
+                    <h3>About us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        sed do eiusmod tempor incididunt dolore magna
+                        aliqua.</p>
+                    <div class="footer-subscribe">
+                        <input type="email" placeholder="Email">
+                        <button>Send</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copy Right © 2022</p>
+            </div>
+        </footer>
+
+        <style>
+        canvas {
+            width: 100% !important;
+            height: 200px !important;
+            margin-top: 1rem;
+        }
+    </style>
+
+        <script>
+        window.addEventListener('load', function() {
+            const totalCasesCtx = document.getElementById('totalCasesChart').getContext('2d');
+            new Chart(totalCasesCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Total Cases',
+                        data: [65, 59, 80, 81, 56, 85],
+                        borderColor: '#00F2B1',
+                        tension: 0.4,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const deathsCtx = document.getElementById('deathsChart').getContext('2d');
+            new Chart(deathsCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Deaths',
+                        data: [28, 48, 40, 19, 86, 27],
+                        borderColor: '#FF4B4B',
+                        tension: 0.4,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+    </body>
+</html>
