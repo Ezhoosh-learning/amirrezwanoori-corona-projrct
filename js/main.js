@@ -58,9 +58,10 @@ const countryData = [
     }
 ];
 
+// Populate table with data
 document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.querySelector('tbody');
-
+    
     countryData.forEach(data => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -84,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tableBody.appendChild(row);
     });
 
+    // Add click events for filter buttons
     const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -91,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Add click event for country select
     const countrySelect = document.querySelector('.country-select');
     if (countrySelect) {
         countrySelect.addEventListener('click', () => {
@@ -98,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Add click event for date select
     const dateSelect = document.querySelector('.date-select');
     if (dateSelect) {
         dateSelect.addEventListener('click', () => {
@@ -105,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Add click event for see more button
     const seeMoreBtn = document.querySelector('.see-more');
     if (seeMoreBtn) {
         seeMoreBtn.addEventListener('click', () => {
@@ -113,6 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Placeholder for chart functionality
+// In a real application, you would use a charting library like Chart.js
 const createCharts = () => {
+    // Implementation for charts would go here
     console.log('Charts would be initialized here');
 }; 

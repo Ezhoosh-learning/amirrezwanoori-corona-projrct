@@ -4,16 +4,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Corona Virus Statistics</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="assets/style.css">
         <!-- Font Awesome -->
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Google Fonts -->
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
             rel="stylesheet">
+        <!-- Chart.js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
+        <!-- Header -->
         <header>
             <nav class="navbar">
                 <a href="#" class="logo">LOGO</a>
@@ -33,6 +36,7 @@
             </nav>
         </header>
 
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
                 <h1><span class="highlight">Corona</span> virus statistics</h1>
@@ -47,12 +51,13 @@
             <div class="hero-image">
                 <div class="image-container">
                     <img
-                        src="./doctor.png"
+                        src="./assets/doctor.png"
                         alt="Doctor">
                 </div>
             </div>
         </section>
 
+        <!-- Statistics Section -->
         <section class="statistics">
             <h2>STATISTICS</h2>
             <div class="filters">
@@ -93,6 +98,7 @@
             </div>
         </section>
 
+        <!-- Chart Section -->
         <section class="chart">
             <h2>CHART</h2>
             <div class="charts-container">
@@ -130,6 +136,7 @@
             </div>
         </section>
 
+        <!-- Orders Country Section -->
         <section class="orders">
             <div class="orders-header">
                 <h2>Orders Country</h2>
@@ -181,12 +188,14 @@
                             <td>IN335942</td>
                             <td><i class="fas fa-ellipsis-v"></i></td>
                         </tr>
+                        <!-- Add more rows as needed -->
                     </tbody>
                 </table>
             </div>
             <button class="see-more">See More</button>
         </section>
 
+        <!-- Blog Section -->
         <section class="blog">
             <h2>BLOG</h2>
             <div class="blog-grid">
@@ -289,6 +298,7 @@
             </div>
         </section>
 
+        <!-- Footer -->
         <footer>
             <div class="footer-content">
                 <div class="footer-menu">
@@ -317,6 +327,7 @@
         </footer>
 
         <style>
+        /* Inline styles for charts */
         canvas {
             width: 100% !important;
             height: 200px !important;
@@ -325,7 +336,9 @@
     </style>
 
         <script>
+        // Create charts when the page loads
         window.addEventListener('load', function() {
+            // Total Cases Chart
             const totalCasesCtx = document.getElementById('totalCasesChart').getContext('2d');
             new Chart(totalCasesCtx, {
                 type: 'line',
@@ -355,6 +368,7 @@
                 }
             });
 
+            // Deaths Chart
             const deathsCtx = document.getElementById('deathsChart').getContext('2d');
             new Chart(deathsCtx, {
                 type: 'line',
