@@ -1,4 +1,3 @@
-// Sample data for the table
 const countryData = [
     {
         country: 'USA',
@@ -58,7 +57,6 @@ const countryData = [
     }
 ];
 
-// Populate table with data
 document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.querySelector('tbody');
     
@@ -85,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         tableBody.appendChild(row);
     });
 
-    // Add click events for filter buttons
     const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -93,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add click event for country select
     const countrySelect = document.querySelector('.country-select');
     if (countrySelect) {
         countrySelect.addEventListener('click', () => {
@@ -101,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add click event for date select
     const dateSelect = document.querySelector('.date-select');
     if (dateSelect) {
         dateSelect.addEventListener('click', () => {
@@ -109,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add click event for see more button
     const seeMoreBtn = document.querySelector('.see-more');
     if (seeMoreBtn) {
         seeMoreBtn.addEventListener('click', () => {
@@ -118,9 +112,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Placeholder for chart functionality
-// In a real application, you would use a charting library like Chart.js
 const createCharts = () => {
-    // Implementation for charts would go here
     console.log('Charts would be initialized here');
 }; 
+
+window.addEventListener('load', function() {
+    const totalCasesCtx = document.getElementById('totalCasesChart').getContext('2d');
+    new Chart(totalCasesCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Total Cases',
+                data: [65, 59, 80, 81, 56, 85],
+                borderColor: '#00F2B1',
+                tension: 0.4,
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const deathsCtx = document.getElementById('deathsChart').getContext('2d');
+    new Chart(deathsCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Deaths',
+                data: [28, 48, 40, 19, 86, 27],
+                borderColor: '#FF4B4B',
+                tension: 0.4,
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+});

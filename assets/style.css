@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +20,12 @@ body {
     line-height: 1.6;
 }
 
-/* Header Styles */
+canvas {
+    width: 100% !important;
+    height: 200px !important;
+    margin-top: 1rem;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -838,7 +842,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
     .stats-container {
         grid-template-columns: 1fr;
@@ -983,4 +986,4 @@ footer {
     .blog-image {
         height: 200px;
     }
-} 
+}

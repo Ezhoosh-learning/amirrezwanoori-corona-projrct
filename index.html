@@ -3,20 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Corona Virus Statistics</title>
+        <title>
+            Corona Virus Statistics
+        </title>
         <link rel="stylesheet" href="assets/style.css">
-        <!-- Font Awesome -->
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <!-- Google Fonts -->
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
             rel="stylesheet">
-        <!-- Chart.js -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     </head>
     <body>
-        <!-- Header -->
         <header>
             <nav class="navbar">
                 <a href="#" class="logo">LOGO</a>
@@ -35,8 +33,6 @@
                 <button class="get-start desktop-only">Get Start</button>
             </nav>
         </header>
-
-        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
                 <h1><span class="highlight">Corona</span> virus statistics</h1>
@@ -57,7 +53,6 @@
             </div>
         </section>
 
-        <!-- Statistics Section -->
         <section class="statistics">
             <h2>STATISTICS</h2>
             <div class="filters">
@@ -98,7 +93,6 @@
             </div>
         </section>
 
-        <!-- Chart Section -->
         <section class="chart">
             <h2>CHART</h2>
             <div class="charts-container">
@@ -136,7 +130,6 @@
             </div>
         </section>
 
-        <!-- Orders Country Section -->
         <section class="orders">
             <div class="orders-header">
                 <h2>Orders Country</h2>
@@ -188,14 +181,12 @@
                             <td>IN335942</td>
                             <td><i class="fas fa-ellipsis-v"></i></td>
                         </tr>
-                        <!-- Add more rows as needed -->
                     </tbody>
                 </table>
             </div>
             <button class="see-more">See More</button>
         </section>
 
-        <!-- Blog Section -->
         <section class="blog">
             <h2>BLOG</h2>
             <div class="blog-grid">
@@ -298,7 +289,6 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer>
             <div class="footer-content">
                 <div class="footer-menu">
@@ -325,79 +315,6 @@
                 <p>Copy Right © 2022</p>
             </div>
         </footer>
-
-        <style>
-        /* Inline styles for charts */
-        canvas {
-            width: 100% !important;
-            height: 200px !important;
-            margin-top: 1rem;
-        }
-    </style>
-
-        <script>
-        // Create charts when the page loads
-        window.addEventListener('load', function() {
-            // Total Cases Chart
-            const totalCasesCtx = document.getElementById('totalCasesChart').getContext('2d');
-            new Chart(totalCasesCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                    datasets: [{
-                        label: 'Total Cases',
-                        data: [65, 59, 80, 81, 56, 85],
-                        borderColor: '#00F2B1',
-                        tension: 0.4,
-                        fill: false
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-
-            // Deaths Chart
-            const deathsCtx = document.getElementById('deathsChart').getContext('2d');
-            new Chart(deathsCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                    datasets: [{
-                        label: 'Deaths',
-                        data: [28, 48, 40, 19, 86, 27],
-                        borderColor: '#FF4B4B',
-                        tension: 0.4,
-                        fill: false
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        });
-    </script>
+        <script src="js/main.js"></script>
     </body>
 </html>
