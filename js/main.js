@@ -1,3 +1,4 @@
+
 const countryData = [
     {
         country: 'USA',
@@ -56,61 +57,6 @@ const countryData = [
         tracking: 'IN335942'
     }
 ];
-
-document.addEventListener('DOMContentLoaded', () => {
-    const tableBody = document.querySelector('tbody');
-    
-    countryData.forEach(data => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <img src="images/${data.country.toLowerCase()}-flag.png" alt="${data.country}" style="width: 24px; height: 24px; border-radius: 50%;">
-                    ${data.country}
-                </div>
-            </td>
-            <td>${data.totalCases}</td>
-            <td>${data.death}</td>
-            <td>${data.recovered}</td>
-            <td>${data.rank}</td>
-            <td>${data.tracking}</td>
-            <td>
-                <button style="background: none; border: none; cursor: pointer;">
-                    <i class="fas fa-ellipsis-v"></i>
-                </button>
-            </td>
-        `;
-        tableBody.appendChild(row);
-    });
-
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            alert('Filter functionality will be implemented here');
-        });
-    });
-
-    const countrySelect = document.querySelector('.country-select');
-    if (countrySelect) {
-        countrySelect.addEventListener('click', () => {
-            alert('Country selection will be implemented here');
-        });
-    }
-
-    const dateSelect = document.querySelector('.date-select');
-    if (dateSelect) {
-        dateSelect.addEventListener('click', () => {
-            alert('Date selection will be implemented here');
-        });
-    }
-
-    const seeMoreBtn = document.querySelector('.see-more');
-    if (seeMoreBtn) {
-        seeMoreBtn.addEventListener('click', () => {
-            alert('More data will be loaded here');
-        });
-    }
-});
 
 const createCharts = () => {
     console.log('Charts would be initialized here');
