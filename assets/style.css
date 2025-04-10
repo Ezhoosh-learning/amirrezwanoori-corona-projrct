@@ -156,7 +156,6 @@ canvas {
     box-shadow: 0 5px 15px rgba(0, 242, 177, 0.15);
 }
 
-/* Hero Section */
 .hero {
     display: flex;
     justify-content: space-between;
@@ -289,9 +288,8 @@ canvas {
     z-index: 2;
 }
 
-/* Statistics Section */
 .statistics {
-    padding: 4rem 8%;
+    padding: 0.2rem 8%;
     background-color: var(--white);
 }
 
@@ -805,11 +803,12 @@ footer {
 
 .footer-subscribe {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .footer-subscribe input {
-    flex: 1;
+    flex-grow: 3;
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 50px;
@@ -818,6 +817,7 @@ footer {
 }
 
 .footer-subscribe button {
+    flex-grow: 1;
     background-color: var(--primary-color);
     color: var(--white);
     border: none;
