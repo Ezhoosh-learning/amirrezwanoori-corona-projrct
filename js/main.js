@@ -60,9 +60,9 @@ const countryData = [
 
 const createCharts = () => {
     console.log('Charts would be initialized here');
-}; 
+};
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const totalCasesCtx = document.getElementById('totalCasesChart').getContext('2d');
     new Chart(totalCasesCtx, {
         type: 'line',
@@ -121,3 +121,37 @@ window.addEventListener('load', function() {
         }
     });
 });
+
+fetch("https://disease.sh/v3/covid-19/all")
+  .then((res) => res.json())
+  .then((data) => {
+    document.getElementById("global-cases").textContent = data.cases.toLocaleString();
+    document.getElementById("global-deaths").textContent = data.deaths.toLocaleString();
+    document.getElementById("global-recovered").textContent = data.recovered.toLocaleString();
+  })
+  .catch((err) => console.error("خطا در گرفتن آمار جهانی:", err));
+
+
+
+const newsUrl = "https://newsapi.org/v2/everything?q=covid&sortBy=publishedAt&pageSize=6&language=fa&apiKey";
+
+fetch(newsUrl)
+  .then((res) => res.json())
+  .then((data) => {
+    const blogSection = document.getElementById("blog-section");
+    blogSection.innerHTML = "";
+
+    data.articles.forEach((article) => {
+      const div = document.createElement("div");
+      div.className = "blog-item";
+      div.innerHTML = `
+        <h3>${article.title}</h3>
+        <p>${article.description}</p>
+        <a href="${article.url}" target="_blank">ادامه مطلب</a>
+      `;
+      blogSection.appendChild(div);
+    });
+  })
+  .catch((err) => {
+    console.error("خطا در گرفتن اخبار:", err);
+  });
