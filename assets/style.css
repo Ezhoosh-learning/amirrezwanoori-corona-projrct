@@ -533,8 +533,8 @@ canvas {
 .stat-detail h4 {
     font-size: 1.6rem;
     color: var(--primary-color);
-    margin-bottom: 0.4rem;
     font-weight: 600;
+    margin: 0 15px;
 }
 
 .stat-detail p {
