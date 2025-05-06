@@ -56,12 +56,18 @@
         <section class="statistics">
             <h2>STATISTICS</h2>
             <div class="filters">
-                <div class="country-select">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg"
-                        alt="Canada" width="24">
-                    <span>Canada</span>
-                </div>
+                <button class="dropdown">
+                    <div class="country-select">CANADA
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg"
+                            alt="Canada" width="24">
+                        <div class="dropdown-content">
+                            <a href="#" data-country="iran">Iran</a>
+                            <a href="#" data-country="germany">Germany</a>
+                            <a href="#" data-country="france">France</a>
+                        </div>
+                    </div>
+                </button>
                 <div class="date-select">
                     <i class="far fa-calendar"></i>
                     <span>Date</span>
@@ -87,8 +93,8 @@
                     <p>Recovered</p>
                 </div>
                 <div class="stat-card">
-                    <h3>12,456</h3>
-                    <p>Recovered</p>
+                    <h3 class="today-deaths"></h3>
+                    <p>todayDeaths</p>
                 </div>
             </div>
         </section>
