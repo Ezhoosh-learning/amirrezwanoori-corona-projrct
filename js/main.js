@@ -157,13 +157,5 @@ async function load_statistics_spain() {
     }
 }
 
-// fetch('https://source.unsplash.com/800x600/?doctor')
-//   .then(response => {
-//     const img = document.createElement('img');
-//     img.src = response.url;
-//     document.body.appendChild(img);
-//   });
 
-const img = document.createElement('img');
-img.src = 'https://source.unsplash.com/800x600/?female-doctor';
-document.body.appendChild(img);
+
