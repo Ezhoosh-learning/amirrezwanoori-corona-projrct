@@ -63,97 +63,28 @@ function set_content(tag, data) {
 }
 
 window.addEventListener("load", () => {
-    load_statistics();
-    load_statistics_usa();
-    load_statistics_china();
-    load_statistics_brazil();
-    load_statistics_spain();
-})
+    const countries = ["all", "usa", "china", "brazil", "spain"];
+    countries.forEach(load_statistics);
+});
 
-async function load_statistics() {
+async function load_statistics(country) {
+    const url = country === "all"
+        ? "https://disease.sh/v3/covid-19/all"
+        : `https://disease.sh/v3/covid-19/countries/${country}`;
+
     try {
-        const res = await fetch("https://disease.sh/v3/covid-19/all")
+        const res = await fetch(url);
         const data = await res.json();
 
-        set_content(".global-cases", data.cases.toLocaleString())
-        set_content(".global-deaths", data.deaths.toLocaleString())
-        set_content(".global-recovered", data.recovered.toLocaleString())
-        set_content(".today-deaths", data.todayDeaths.toLocaleString())
+        const suffix = country === "all" ? "" : `-${country}`;
 
-    }
-    catch (err) {
-        alert("Load statistics failed")
-        console.error(err)
-    }
-}
-
-
-async function load_statistics_usa() {
-    try {
-        const res = await fetch("https://disease.sh/v3/covid-19/countries/usa")
-        const data = await res.json();
-
-        set_content(".global-cases-usa", data.cases.toLocaleString())
-        set_content(".global-deaths-usa", data.deaths.toLocaleString())
-        set_content(".global-recovered-usa", data.recovered.toLocaleString())
-        set_content(".today-deaths-usa", data.todayDeaths.toLocaleString())
-
-    }
-    catch (err) {
-        alert("Load statistics failed")
-        console.error(err)
-    }
-}
-
-
-async function load_statistics_china() {
-    try {
-        const res = await fetch("https://disease.sh/v3/covid-19/countries/china")
-        const data = await res.json();
-
-        set_content(".global-cases-china", data.cases.toLocaleString())
-        set_content(".global-deaths-china", data.deaths.toLocaleString())
-        set_content(".global-recovered-china", data.recovered.toLocaleString())
-        set_content(".today-deaths-china", data.todayDeaths.toLocaleString())
-
-    }
-    catch (err) {
-        alert("Load statistics failed")
-        console.error(err)
-    }
-}
-
-async function load_statistics_brazil() {
-    try {
-        const res = await fetch("https://disease.sh/v3/covid-19/countries/brazil")
-        const data = await res.json();
-
-        set_content(".global-cases-brazil", data.cases.toLocaleString())
-        set_content(".global-deaths-brazil", data.deaths.toLocaleString())
-        set_content(".global-recovered-brazil", data.recovered.toLocaleString())
-        set_content(".today-deaths-brazil", data.todayDeaths.toLocaleString())
-
-    }
-    catch (err) {
-        alert("Load statistics failed")
-        console.error(err)
-    }
-}
-
-async function load_statistics_spain() {
-    try {
-        const res = await fetch("https://disease.sh/v3/covid-19/countries/spain")
-        const data = await res.json();
-
-        set_content(".global-cases-spain", data.cases.toLocaleString())
-        set_content(".global-deaths-spain", data.deaths.toLocaleString())
-        set_content(".global-recovered-spain", data.recovered.toLocaleString())
-        set_content(".today-deaths-spain", data.todayDeaths.toLocaleString())
-
-    }
-    catch (err) {
-        alert("Load statistics failed")
-        console.error(err)
+        set_content(`.global-cases${suffix}`, data.cases.toLocaleString());
+        set_content(`.global-deaths${suffix}`, data.deaths.toLocaleString());
+        set_content(`.global-recovered${suffix}`, data.recovered.toLocaleString());
+        set_content(`.today-deaths${suffix}`, data.todayDeaths.toLocaleString());
+    } catch (err) {
+        alert(`Load statistics failed for ${country}`);
+        console.error(err);
     }
 }
 
