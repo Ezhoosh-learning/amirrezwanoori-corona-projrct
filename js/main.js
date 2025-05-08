@@ -59,58 +59,59 @@ window.addEventListener('load', function () {
 });
 function set_content(tag, data) {
     document.querySelectorAll(tag).forEach(e => e.textContent = data);
-  }
-  
-  async function load_statistics(country) {
-    const url = country === "all"
-      ? "https://disease.sh/v3/covid-19/all"
-      : `https://disease.sh/v3/covid-19/countries/${country}`;
-  
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-  
-      set_content(".global-cases", data.cases.toLocaleString());
-      set_content(".global-deaths", data.deaths.toLocaleString());
-      set_content(".global-recovered", data.recovered.toLocaleString());
-      set_content(".today-deaths", data.todayDeaths.toLocaleString());
-    } catch (err) {
-      alert(`Failed to load data for ${country}`);
-      console.error(err);
-    }
-  }
-  
-  // وقتی صفحه لود میشه، اطلاعات USA رو بیار
-  window.addEventListener("load", () => {
-    load_statistics("usa");
-  });
-  
-  // وقتی کاربر کشوری رو انتخاب می‌کنه
-  document.querySelectorAll(".dropdown-content a").forEach(link => {
-    link.addEventListener("click", function(e) {
-      e.preventDefault();
-  
-      const country = this.dataset.country;
-      const flagCode = this.dataset.flag;
-  
-      document.querySelector(".selected-country-name").textContent = country.toUpperCase();
-  
-      // اگه کشور جهانی باشه، از پرچم سازمان ملل استفاده کن
-      const flagUrl = flagCode === "un"
-        ? "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/UN_flag.svg/320px-UN_flag.svg.png"
-        : `https://flagcdn.com/${flagCode}.svg`;
-  
-      document.querySelector(".selected-flag").src = flagUrl;
-  
-      load_statistics(country);
+}
 
-      document.querySelector(".country-select").addEventListener("click", () => {
-        const dropdown = document.querySelector(".dropdown-content");
-        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-      });
-         
+async function load_statistics(country) {
+    const url = country === "all"
+        ? "https://disease.sh/v3/covid-19/all"
+        : `https://disease.sh/v3/covid-19/countries/${country}`;
+
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+
+        set_content(".global-cases", data.cases.toLocaleString());
+        set_content(".global-deaths", data.deaths.toLocaleString());
+        set_content(".global-recovered", data.recovered.toLocaleString());
+        set_content(".today-deaths", data.todayDeaths.toLocaleString());
+        
+    } catch (err) {
+        alert(`Failed to load data for ${country}`);
+        console.error(err);
+    }
+}
+
+// وقتی صفحه لود میشه، اطلاعات USA رو بیار
+window.addEventListener("load", () => {
+    load_statistics("usa");
+});
+
+// وقتی کاربر کشوری رو انتخاب می‌کنه
+document.querySelectorAll(".dropdown-content a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const country = this.dataset.country;
+        const flagCode = this.dataset.flag;
+
+        document.querySelector(".selected-country-name").textContent = country.toUpperCase();
+
+        // اگه کشور جهانی باشه، از پرچم سازمان ملل استفاده کن
+        const flagUrl = flagCode === "un"
+            ? "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/UN_flag.svg/320px-UN_flag.svg.png"
+            : `https://flagcdn.com/${flagCode}.svg`;
+
+        document.querySelector(".selected-flag").src = flagUrl;
+
+        load_statistics(country);
+
+        document.querySelector(".country-select").addEventListener("click", () => {
+            const dropdown = document.querySelector(".dropdown-content");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        });
     });
-  });
-  
+    
+});
+
 
 
