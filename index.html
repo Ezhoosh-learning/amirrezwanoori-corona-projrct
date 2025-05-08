@@ -56,48 +56,43 @@
         <section class="statistics">
             <h2>STATISTICS</h2>
             <div class="filters">
-                <button class="dropdown">
-                    <div class="country-select">USA
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg/250px-Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg.png"
-                            alt="USA" width="24">
-                        <div class="dropdown-content">
-                            <a href="#" data-country="CHINA">CHINA</a>
-                            <a href="#" data-country="BRAZIL">BRAZIL</a>
-                            <a href="#" data-country="SPAIN">SPAIN</a>
-                        </div>
+                <div class="dropdown">
+                    <div class="country-select">
+                      <span class="selected-country-name">USA</span>
+                      <img class="selected-flag"
+                           src="https://flagcdn.com/us.svg"
+                           alt="USA" width="24">
                     </div>
-                </button>
-                <div class="date-select">
-                    <i class="far fa-calendar"></i>
-                    <span>Date</span>
-                </div>
-                <button class="filter-btn">Filter</button>
+                    <div class="dropdown-content">
+                      <a href="#" data-country="usa" data-flag="us">USA</a>
+                      <a href="#" data-country="china" data-flag="cn">CHINA</a>
+                      <a href="#" data-country="brazil" data-flag="br">BRAZIL</a>
+                      <a href="#" data-country="spain" data-flag="es">SPAIN</a>
+                      <a href="#" data-country="all" data-flag="un">ALL</a>
+                    </div>
+                  </div>
+                  
             </div>
-
+          
             <div class="stats-cards">
-                <div class="stat-card">
-                    <h3>14</h3>
-                    <p>Rank</p>
-                </div>
-                <div class="stat-card">
-                    <h3 class="global-cases"></h3>
-                    <p>Total Cases</p>
-                </div>
-                <div class="stat-card">
-                    <h3 class="global-deaths"></h3>
-                    <p>Death</p>
-                </div>
-                <div class="stat-card">
-                    <h3 class="global-recovered"></h3>
-                    <p>Recovered</p>
-                </div>
-                <div class="stat-card">
-                    <h3 class="today-deaths"></h3>
-                    <p>todayDeaths</p>
-                </div>
+              <div class="stat-card">
+                <h3 class="global-cases">-</h3>
+                <p>Total Cases</p>
+              </div>
+              <div class="stat-card">
+                <h3 class="global-deaths">-</h3>
+                <p>Deaths</p>
+              </div>
+              <div class="stat-card">
+                <h3 class="global-recovered">-</h3>
+                <p>Recovered</p>
+              </div>
+              <div class="stat-card">
+                <h3 class="today-deaths">-</h3>
+                <p>Today's Deaths</p>
+              </div>
             </div>
-        </section>
+          </section>
 
         <section class="chart">
             <h2>CHART</h2>
@@ -164,9 +159,9 @@
                                     USA
                                 </div>
                             </td>
-                            <td class="global-cases-usa"></td>
-                            <td class="global-deaths-usa"></td>
-                            <td class="global-recovered-usa"></td>
+                            <td class="global-cases"></td>
+                            <td class="global-deaths"></td>
+                            <td class="global-recovered"></td>
                             <td>1</td>
                             <td>IN335942</td>
                             <td><i class="fas fa-ellipsis-v"></i></td>
@@ -180,9 +175,9 @@
                                     CHINA
                                 </div>
                             </td>
-                            <td class="global-cases-china"></td>
-                            <td class="global-deaths-china"></td>
-                            <td class="global-recovered-china"></td>
+                            <td class="global-cases"></td>
+                            <td class="global-deaths"></td>
+                            <td class="global-recovered"></td>
                             <td>2</td>
                             <td>IN335942</td>
                             <td><i class="fas fa-ellipsis-v"></i></td>
