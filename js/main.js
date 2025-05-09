@@ -94,7 +94,6 @@ document.querySelectorAll(".dropdown-content a").forEach(link => {
 
         document.querySelector(".selected-country-name").textContent = country.toUpperCase();
 
-        
         const flagUrl = flagCode === "un"
             ? "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/UN_flag.svg/320px-UN_flag.svg.png"
             : `https://flagcdn.com/${flagCode}.svg`;
