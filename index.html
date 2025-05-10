@@ -57,13 +57,12 @@
             <h2>STATISTICS</h2>
             <div class="filters">
                 <div class="dropdown">
-                    <div class="country-select">
+                    <div class="country-select" id="countryToggle">
                       <span class="selected-country-name">USA</span>
-                      <img class="selected-flag"
-                           src="https://flagcdn.com/us.svg"
-                           alt="USA" width="24">
+                      <img class="selected-flag" src="https://flagcdn.com/us.svg" alt="USA" width="24">
+                      <i class="arrow">&#9662;</i> <!-- مثلث کوچیک برای باز/بستن -->
                     </div>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" id="dropdownMenu">
                       <a href="#" data-country="usa" data-flag="us">USA</a>
                       <a href="#" data-country="china" data-flag="cn">CHINA</a>
                       <a href="#" data-country="brazil" data-flag="br">BRAZIL</a>
@@ -71,6 +70,7 @@
                       <a href="#" data-country="all" data-flag="un">ALL</a>
                     </div>
                   </div>
+                  
                   
             </div>
           
