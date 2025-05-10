@@ -1,63 +1,4 @@
-window.addEventListener('load', function () {
-    const totalCasesCtx = document.getElementById('totalCasesChart').getContext('2d');
-    new Chart(totalCasesCtx, {
-        type: 'line',
-        data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            datasets: [{
-                label: 'Total Cases',
-                data: [65, 59, 80, 81, 56, 85],
-                borderColor: '#00F2B1',
-                tension: 0.4,
-                fill: false
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    const deathsCtx = document.getElementById('deathsChart').getContext('2d');
-    new Chart(deathsCtx, {
-        type: 'line',
-        data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            datasets: [{
-                label: 'Deaths',
-                data: [28, 48, 40, 19, 86, 27],
-                borderColor: '#FF4B4B',
-                tension: 0.4,
-                fill: false
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-});
-
+let totalCasesChart, deathsChart;
 
 function set_content(tag, data) {
     document.querySelectorAll(tag).forEach(e => e.textContent = data);
@@ -76,6 +17,17 @@ async function load_statistics(country) {
         set_content(".global-deaths", data.deaths.toLocaleString());
         set_content(".global-recovered", data.recovered.toLocaleString());
         set_content(".today-deaths", data.todayDeaths.toLocaleString());
+
+        if (totalCasesChart && deathsChart) {
+            totalCasesChart.data.datasets[0].data = [data.cases];
+            totalCasesChart.data.labels = ["Total Cases"];
+            totalCasesChart.update();
+
+            deathsChart.data.datasets[0].data = [data.deaths];
+            deathsChart.data.labels = ["Total Deaths"];
+            deathsChart.update();
+        }
+
     } catch (err) {
         alert(`Failed to load data for ${country}`);
         console.error(err);
@@ -122,6 +74,50 @@ async function populateCountryDropdown() {
     }
 }
 
+window.addEventListener('load', async () => {
+    const totalCasesCtx = document.getElementById('totalCasesChart').getContext('2d');
+    const deathsCtx = document.getElementById('deathsChart').getContext('2d');
+
+    totalCasesChart = new Chart(totalCasesCtx, {
+        type: 'bar',
+        data: {
+            labels: ["Total Cases"],
+            datasets: [{
+                label: 'Total Cases',
+                data: [],
+                backgroundColor: '#00F2B1'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true } }
+        }
+    });
+
+    deathsChart = new Chart(deathsCtx, {
+        type: 'bar',
+        data: {
+            labels: ["Total Deaths"],
+            datasets: [{
+                label: 'Deaths',
+                data: [],
+                backgroundColor: '#FF4B4B'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true } }
+        }
+    });
+
+    await load_statistics("usa");
+    await populateCountryDropdown();
+});
+
 const toggle = document.getElementById("countryToggle");
 const dropdown = document.querySelector(".dropdown");
 
@@ -132,9 +128,4 @@ toggle.addEventListener("click", (e) => {
 
 document.addEventListener("click", () => {
     dropdown.classList.remove("open");
-});
-
-window.addEventListener("load", () => {
-    load_statistics("usa");
-    populateCountryDropdown();
 });
